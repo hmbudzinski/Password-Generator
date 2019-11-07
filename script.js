@@ -14,7 +14,7 @@ var symbolValues = "!@#$%^&*()_-=+".split;
 genButton.addEventListener("click", function(event){
 var lowercase = confirm("Do you want your password to use lowercase letters?");
     
-    if(event){
+    if(event === true){
     console.log("they want lowercase");
     }
     else{
@@ -23,7 +23,7 @@ var lowercase = confirm("Do you want your password to use lowercase letters?");
 
 var uppercase = confirm("Do you want your password to use uppercase letters?");
    
-    if (event){
+    if (event === true){
     console.log("they want to use uppercase");
     }
     else{
@@ -32,7 +32,7 @@ var uppercase = confirm("Do you want your password to use uppercase letters?");
 
 var symbols = confirm("Do you want your password to use symbols?");
 
-    if (event){
+    if (event === true){
     console.log("they want to use symbols");
     }
     else{
@@ -41,7 +41,7 @@ var symbols = confirm("Do you want your password to use symbols?");
 
 var numbers = confirm("Do you want your password to use numbers?");
 
-    if (event){
+    if (event === true){
     console.log("they want to use numbers");
     }
     else{
@@ -49,10 +49,12 @@ var numbers = confirm("Do you want your password to use numbers?");
     }
 })
 
+//need to log users answers and only use what was selected 
+
 //generate password 
-function generate(){
-    set password length/complexity
-    let complexity = document.getElementById("slider").value;
+// function generate(){
+//     set password length/complexity
+//     let complexity = document.getElementById("slider").value;
 
 
 //     let password = "";
@@ -82,10 +84,12 @@ function generate(){
 
 // //function to copy to clipboard
 
-// function copyPassword(){
+// copyButton.addEventListener("click", function(event){
+
+// function.copyPassword(){
 //     document.getElementById("display").select();
-
 //     document.execCommand("Copy");
-
+//     }
 //     alert("Password Copied to Clipboard!");
-// }
+
+// })
