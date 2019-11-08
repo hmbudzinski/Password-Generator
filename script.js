@@ -5,15 +5,18 @@ var genButton = document.querySelector("#genButton");
 var copyButton = document.querySelector("#copyButton");
 
 //arrays for password
-// var passwordParts = ["lowerValues", "upperValues", "numValues", "symbolValues"];
-// var PasswordValues = ["abcdefghijklmnopqrstuvwxyz".split, "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split, "1234567890".split, "!@#$%^&*()_-=+".split];
-var lowerValues = ["abcdefghijklmnopqrstuvwxyz".split];
-var upperValues = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ".split];
-var numValues = ["1234567890".split];
-var symbolValues = ["!@#$%^&*()_-=+".split];
+var lowerValues = ["abcdefghijklmnopqrstuvwxyz"].split;
+var upperValues = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"].split;
+var numValues = ["1234567890"].split;
+var symbolValues = ["!@#$%^&*()_-=+"].split;
+
+//variable for display
+var displayEl = document.getElementById("#display");
 
 //when user clicks generate password, ask if would like to include lowercase values 
 genButton.addEventListener("click", function(event){
+
+//determines if user wants lowercase
 var lowercase = confirm("Do you want your password to use lowercase letters?");
     
     if(lowercase === true){
@@ -24,6 +27,7 @@ var lowercase = confirm("Do you want your password to use lowercase letters?");
     console.log("they do not want lowercase");
     }
 
+//determines is user wants uppercase
 var uppercase = confirm("Do you want your password to use uppercase letters?");
    
     if (uppercase === true){
@@ -34,6 +38,7 @@ var uppercase = confirm("Do you want your password to use uppercase letters?");
         console.log("they do not want uppercase");
     }
 
+//determines if user wants symbols
 var symbols = confirm("Do you want your password to use symbols?");
 
     if (symbols === true){
@@ -44,6 +49,7 @@ var symbols = confirm("Do you want your password to use symbols?");
         console.log("they do not want symbols");
     }
 
+//determines if user wants numbers 
 var numbers = confirm("Do you want your password to use numbers?");
 
     if (numbers === true){
@@ -54,54 +60,28 @@ var numbers = confirm("Do you want your password to use numbers?");
         console.log("they do not want numbers");
     }
 
-//set password length and complexity 
+//lets user decide what length
 var passLength = prompt("How long do you want your password to be? Choose a number between 1 and 120!");
+    
     if (passLength){
         console.log("Amount: " + passLength);
     }
-
-var complexity = document.getElementById("passLength").value;
-
 })
 
-//generate pasword 
+// end of choices 
+
+//need to generate pasword 
 //need to log users answers and only use what was selected 
-function generate(){
-    passwordComboValues = ["numValues", "symbolValues", "upperValues", "lowerValues"];
+
+//add password to textbox.display area
+// document.getElementById("display").value = password;
     
-    for (var i = 0; i < 0; i++){
-        var finalPassCombo =  passwordComboValues[Math.floor(Math.random() * passwordComboValues.length)];
-        console.log("password");
-    }
-
-    finalPassCombo = "";
-}
-
-    var password = "";
-
-//create for loop to choose password characters
-    for(var i = 0; i <= complexity; i++){
-        password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
-    }
-    
- //add password to textbox.display area
-    document.getElementById("display").value = password;
-
-}
-
-// //set default length display of 60
-// document.getElementById("length"). innerHTML = "length: 60";
-
-// //function to set length based on slider position
-// document.getElementById("slider").oninput = function(){
-//     if(document.getElementById("slider").value > 0){
-//         document.getElementById("length").innerHTML = "Length: " + document.getElementById("slider").value;
-//     }
-//     else{
-//         documents.getElementById("length").innerHTML = "Length: 1";
-//     }
 // }
-
+//create for loop to choose password characters
+    // for(var i = 0; i <= complexity; i++){
+    //     password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
+    // }
+    
 // //function to copy to clipboard
 
 // copyButton.addEventListener("click", function(event){
