@@ -7,19 +7,19 @@ var copyButton = document.querySelector("#copyButton");
 //arrays for password
 var lowerValues = ["abcdefghijklmnopqrstuvwxyz"];
 lowerValues[0].split("");
-console.log(lowerValues[0].split(""));
+// console.log(lowerValues[0].split(""));
 
 var upperValues = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 lowerValues[0].split("");
-console.log(upperValues[0].split(""));
+// console.log(upperValues[0].split(""));
 
 var numValues = ["1234567890"];
 numValues[0].split("");
-console.log(numValues[0].split(""));
+// console.log(numValues[0].split(""));
 
 var symbolValues = ["!@#$%^&*()_-=+"];
 numValues[0].split("");
-console.log(symbolValues[0].split(""));
+// console.log(symbolValues[0].split(""));
 
 
 //variable for display
@@ -41,7 +41,7 @@ var lowercase = confirm("Do you want your password to use lowercase letters?");
         console.log("they do not want lowercase");
     }
 
-//determines is user wants uppercase
+//determines if user wants uppercase
 var uppercase = confirm("Do you want your password to use uppercase letters?");
    
     if (uppercase){
@@ -81,36 +81,25 @@ var passLength = prompt("How long do you want your password to be? Choose a numb
         alert("Must enter amount between 1 and 120");
         prompt("How long do you want your password to be? Choose a number between 1 and 120!");
     }
+
 //if they type a number in, generate random password
 var finalPass = [];
 
-for (var i = 0; i <= passLength; i++){
+for (var i = 1; i <= passLength; i++){
     var passGen = allArray[Math.floor(Math.random() * allArray.length)];
     finalPass.push(passGen); 
     console.log("Lets see: " + passGen);
 }
 console.log(finalPass);
-    // return finalPass;
 
-document.getElementById("display").value = finalPass;
+//add password to textbox.display area
+document.getElementById("display").value = finalPass.join("");
 
 })
 
-
-//need to generate pasword 
-//need to log users answers and only use what was selected 
-
-//add password to textbox.display area
-
-    
-//create for loop to choose password characters
-    // for(var i = 0; i <= complexity; i++){
-    //     password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
-    // }
-    
 //function to copy to clipboard
-    // copyButton.addEventListener("click", function(event){
-    //     document.getElementById("display").select();
-    //     document.execCommand("Copy");
-    // })
-    //     alert("Password Copied to Clipboard!");
+    copyButton.addEventListener("click", function(event){
+        document.getElementById("display").select();
+        document.execCommand("Copy");
+        alert("Password Copied to Clipboard!");
+    })

@@ -8,6 +8,9 @@
 
 #display{
     width: 100%;
+    text-align: center;
+    height: 200px;
+    border: gray dashed 2px;
 }
 
 #slider{
@@ -23,3 +26,10 @@
     margin-bottom: 20px;
 }
 
+.btn{
+    border-radius: 12px;
+}
+
+#copyButton{
+    float: right;
+}
