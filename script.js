@@ -29,7 +29,7 @@ var displayEl = document.getElementById("#display");
 var allArray = [ ];
 
 //when user clicks generate password 
-genButton.addEventListener("click", function(event){
+var genFunction = genButton.addEventListener("click", function(event){
 
 //determines if user wants lowercase
 var lowercase = confirm("Do you want your password to use lowercase letters?");
@@ -61,7 +61,7 @@ var symbols = confirm("Do you want your password to use symbols?");
         console.log("they do not want symbols");
     }
 
-// //determines if user wants numbers 
+//determines if user wants numbers 
 var numbers = confirm("Do you want your password to use numbers?");
 
     if (numbers){
@@ -71,15 +71,21 @@ var numbers = confirm("Do you want your password to use numbers?");
         console.log("they do not want numbers");
     }
 
+    if (lowercase === false && uppercase === false && symbols === false && numbers === false){
+        alert("User must select a variable, please try again");
+        genFunction.genButton();
+    }
+
+
 // //lets user decide what length
-var passLength = prompt("How long do you want your password to be? Choose a number between 1 and 120!");
+var passLength = prompt("How long do you want your password to be? Choose a number between 8 and 128!");
     
-    if (passLength > 0 && passLength < 121){
+    if (passLength > 9 && passLength < 129){
         console.log("Amount: " + passLength);
     }
     else{
-        alert("Must enter amount between 1 and 120");
-        prompt("How long do you want your password to be? Choose a number between 1 and 120!");
+        alert("Must enter amount between 8 and 128");
+        prompt("How long do you want your password to be? Choose a number between 8 and 128!");
     }
 
 //if they type a number in, generate random password
@@ -98,8 +104,9 @@ document.getElementById("display").value = finalPass.join("");
 })
 
 //function to copy to clipboard
-    copyButton.addEventListener("click", function(event){
-        document.getElementById("display").select();
-        document.execCommand("Copy");
-        alert("Password Copied to Clipboard!");
-    })
+
+copyButton.addEventListener("click", function(event){
+    document.getElementById("display").select();
+    document.execCommand("Copy");
+    alert("Password Copied to Clipboard!");
+})

@@ -6,6 +6,11 @@
     width: 100%;
 }
 
+.container{
+   height: 60vh;
+   font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
 #display{
     width: 100%;
     text-align: center;
